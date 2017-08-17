@@ -1,0 +1,86 @@
+body{
+     background-color: #EE5D77;
+}
+
+#main{
+    background-color: #063258;    
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    height: 90vh;
+    z-index: -10;
+    color: white;
+    padding: 5px;
+}
+	
+.shadow {
+    -moz-box-shadow:    3px 3px 5px 6px #B14659;
+    -webkit-box-shadow: 3px 3px 5px 6px #B14659;
+    box-shadow:         3px 3px 5px 6px #B14659;
+}
+
+#input{
+    float:left;
+    border: 1px solid white;
+    height: 480px;
+    width: 640px;    
+    transform: rotateY(-180deg);
+}
+
+#output{
+    float:left;
+    border: 1px solid white;
+    transform: rotateY(-180deg);    
+    height: 480px;
+    width: 640px;    
+}
+
+
+#container {
+    margin-top:1%;
+    float:left;
+    transform: rotateY(-180deg);
+
+    max-width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#container > div{
+    display: inline-block;
+    height: 120px;
+    width: 160px;
+}
+#container > div>canvas{
+    height: 120px;
+    width: 160px;
+}
+
+#controls{
+    margin-top: 5%;
+    float:left;   
+    width: 5%;
+}
+
+button,
+a{
+    display: block;
+    margin: 5px auto;
+    background-color:#063258;
+    border:2px solid white;
+    color:white;
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+button:hover, 
+a:hover{
+    background-color:white;
+    color:#063258;
+}
+ button:disabled{
+     border-color: #095495;
+     color: #095495;
+ }

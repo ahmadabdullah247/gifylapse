@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Time Lapse</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+    <br/><br/>
+    <div id="main" class="shadow">
+        <div id="input">
+            <video id="video" autoplay></video>
+        </div>
+        <div id="controls">
+            <button id="start">|></button>
+            <button id="stop">||</button>
+        </div>
+        <div id="output">
+            <img id="image">
+        </div>
+        <br/>
+        <div id="container"></div>
+
+    </div>
+    <br/>
+</body>
+<script src="assets/js/b64.js"></script>
+<script src="assets/js/LZWEncoder.js"></script>
+<script src="assets/js/NeuQuant.js"></script>
+<script src="assets/js/GIFEncoder.js"></script>
+<script src="assets/js/timelapse.js"></script>
+
+</html>

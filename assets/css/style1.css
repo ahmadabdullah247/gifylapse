@@ -1,0 +1,158 @@
+body{
+    color:white;
+    height: 100vh;
+    width: 100%;
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* Opera */ 
+     background-image: -o-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+}
+
+.wrapper{
+    height: 100%;
+    padding: 0 5%;
+}
+
+.border{
+    border: 1px solid white;
+}
+
+.header{
+    text-align: center;
+}
+
+.header>h5{
+    font-size: 1em;
+    font-weight: lighter;
+    color: #ababab;
+}
+.header>h1{
+    font-size: 2em;
+    font-weight: normal;    
+}
+
+.main{
+    
+}
+
+.video{
+    margin: 0 auto;
+    height: 480px;
+    width: 640px;
+    border-radius:  5px;
+    transform: rotateY(-180deg);
+}
+
+.controls{
+    text-align: center;
+}
+
+.controls-btn,.controls-btn:hover{
+    background-color: inherit;   
+    color: #ababab;
+    border:1px solid #ababab;
+} 
+.btn-floating {
+    background-color: inherit;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+@-webkit-keyframes shake {
+    0%,
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+    }
+}
+
+@keyframes shake {
+    0%,
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+    }
+}
+
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake
+}
+
+
+#container {
+    margin-top:1%;
+    float:left;
+    transform: rotateY(-180deg);
+
+    max-width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+
+
+}
+
+#container > div{
+    display: inline-block;
+    height: 120px;
+    width: 160px;
+}
+#container > div>canvas{
+    height: 120px;
+    width: 160px;
+}
+
+#output{
+    float:left;
+    border: 1px solid white;
+    /* transform: rotateY(-180deg);     */
+    height: 480px;
+    width: 640px;    
+}
+#image{
+    height: 480px;
+    width: 640px;   
+}
+
+
