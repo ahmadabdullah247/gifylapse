@@ -1,34 +1,92 @@
 <!DOCTYPE html>
-<html>
 
 <head>
-    <title>Time Lapse</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GifyLapse</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- style 
+        ===================================================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="assets/css/materialize.css" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 
 <body>
-    <br/><br/>
-    <div id="main" class="shadow">
-        <div id="input">
-            <video id="video" autoplay></video>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="row">
+            <div class="col s4 offset-s4 header">
+                <h1 class="flow-text">GifyLapse</h1>
+                <h5 class="flow-text">Powerd by GeekClan</h5>
+            </div>
         </div>
-        <div id="controls">
-            <button id="start">|></button>
-            <button id="stop">||</button>
-        </div>
-        <div id="output">
-            <img id="image">
-        </div>
-        <br/>
-        <div id="container"></div>
+        <!-- main -->
+        <div class="row">
+            <div class="col s12 main">
+                <div class="video z-depth-5 shake animated">
+                    <video class="video" id="video" autoplay></video>
 
+                    <img id="image">
+
+                </div>
+            </div>
+        </div>
+        <!-- controls -->
+        <div class="row">
+            <div class="col s4 offset-s4 ">
+                <div class="controls">
+                    <a class="btn-floating btn-large waves-effect waves-light z-depth-5 controls-btn" id="start"><i class="fa fa-play fa-2x" aria-hidden="true"></i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light z-depth-5 controls-btn" onclick="Materialize.toast('Wait we are cooking your gify.', 4000,'rounded')"
+                        id="stop"><i class="fa fa-pause fa-2x" aria-hidden="true"></i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light z-depth-5 controls-btn" id="download"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- controls -->
+        <div class="row">
+            <div class="col s12">
+                <div id="container"></div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col s12 main">
+                <div class="video z-depth-5 shake animated">
+                    <div id="output">
+                        <img id="image">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- header -->
+        <!-- action buttons -->
+        <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 19px;">
+            <a class="btn-floating btn-large waves-effect waves-light z-depth-5 controls-btn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+            <ul>
+                <li><a class="btn-floating waves-effect waves-light z-depth-5 controls-btn"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li><a class="btn-floating waves-effect waves-light z-depth-5 controls-btn"><i class="fa fa-google" aria-hidden="true"></i></a>
+                </li>
+                <li><a class="btn-floating waves-effect waves-light z-depth-5 controls-btn"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div style="position: absolute; left: 19px;top:19px;">
+            <a class="btn-floating btn-large" style="background-color:inherit;"><i class="fa fa-angle-left " aria-hidden="true"></i></a>
+        </div>
     </div>
-    <br/>
+
+    <!-- scripts 
+        ===================================================================================================================== -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/materialize.js"></script>
+
+    <script src="assets/js/b64.js"></script>
+    <script src="assets/js/LZWEncoder.js"></script>
+    <script src="assets/js/NeuQuant.js"></script>
+    <script src="assets/js/GIFEncoder.js"></script>
+    <script src="assets/js/gifylapse.js"></script>
 </body>
-<script src="assets/js/b64.js"></script>
-<script src="assets/js/LZWEncoder.js"></script>
-<script src="assets/js/NeuQuant.js"></script>
-<script src="assets/js/GIFEncoder.js"></script>
-<script src="assets/js/timelapse.js"></script>
 
 </html>

@@ -2,6 +2,8 @@ document.getElementById("stop").disabled = true;
 
 // Grab elements, create settings, etc.
 var video = document.getElementById('video');
+var output = document.getElementById('image');
+output.style.display = 'none';
 
 // Get access to the camera!
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -32,19 +34,20 @@ document.getElementById("start").addEventListener("click", function () {
     document.getElementById("stop").disabled = false;
 });
 
+var base_image = new Image();
+base_image.src = 'http://localhost:3000/static/img/gifylapse.png';  //'assets/img/gifylapse.png';
+base_image.height = 32;
+base_image.width = 32;
+base_image.crossOrigin = "Anonymous";
+base_image.onload = function () { console.log('loaded'); };
 function make_base(context) {
-    base_image = new Image();
-    base_image.src = 'http://gifylapse.com/static/img/gifylapse.png';  //'assets/img/gifylapse.png';
-    base_image.height = 32;
-    base_image.width = 32;
-    base_image.crossOrigin = "Anonymous";
-    base_image.onload = function () {
-        context.drawImage(base_image, 0, 410);
-    };
+    context.drawImage(base_image, 0, 410);
 }
 
 document.getElementById("stop").addEventListener("click", function () {
     clearInterval(timeId);
+    video.style.display = 'none';
+    output.style.display = 'block';
     play();
 });
 

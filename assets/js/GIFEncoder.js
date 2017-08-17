@@ -131,11 +131,9 @@ GIFEncoder = function () {
 	 */
 
 	var addFrame = exports.addFrame = function addFrame(im, is_imageData) {
-
 		if ((im === null) || !started || out === null) {
 			throw new Error("Please call start method before calling addFrame");
 		}
-
 		var ok = true;
 
 		try {
@@ -167,7 +165,7 @@ GIFEncoder = function () {
 			writePixels(); // encode and write pixel data
 			firstFrame = false;
 		} catch (e) {
-			console.log('Masala :: ', e);
+			console.log(e);
 			ok = false;
 		}
 
