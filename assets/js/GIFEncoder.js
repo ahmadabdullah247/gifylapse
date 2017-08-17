@@ -141,6 +141,7 @@ GIFEncoder = function () {
 		try {
 			if (!is_imageData) {
 				image = im.getImageData(0, 0, im.canvas.width, im.canvas.height).data;
+				console.log(image);
 				if (!sizeSet) setSize(im.canvas.width, im.canvas.height);
 			} else {
 				image = im;
