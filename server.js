@@ -1,12 +1,9 @@
 var express = require('express');
 var path = require('path');
-var cors = require('cors')
-
 var app = express();
 var port = process.env.PORT || 3000;
 
 
-app.use(cors());
 app.all('/', function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -27,5 +24,7 @@ app.all('/', function (req, res, next) {
 });
 app.use('/static', express.static(path.join(__dirname, '/assets')));
 
+
+app.all('*', (req, res) => res.sendFile(__dirname+'/index.html'));
 
 app.listen(port, () => console.log('Server live ', port));

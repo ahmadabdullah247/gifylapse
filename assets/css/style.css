@@ -37,8 +37,11 @@ body{
     font-weight: normal;    
 }
 
-.main{
-    
+#image{
+    margin: 0 auto;
+    height: 480px;
+    width: 640px;
+    border-radius:  5px;
 }
 
 .video{
@@ -56,7 +59,6 @@ body{
 .controls-btn,.controls-btn:hover{
     background-color: inherit;   
     color: #ababab;
-    border:1px solid #ababab;
 } 
 .btn-floating {
     background-color: inherit;
