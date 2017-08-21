@@ -23,12 +23,12 @@ app.all('/', function (req, res, next) {
 
     next();
 });
-app.use(function(req, res, next) {
-    if(!req.secure) {
-      return res.redirect(['https://', req.get('Host'), req.url].join(''));
-    }
-    next();
-  });
+// app.use(function(req, res, next) {
+//     if(!req.secure) {
+//       return res.redirect(['https://', req.get('Host'), req.url].join(''));
+//     }
+//     next();
+//   });
 app.use('/static', express.static(path.join(__dirname, '/assets')));
 
 
