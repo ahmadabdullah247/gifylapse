@@ -4,6 +4,15 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 
+function forceSSL(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
+      return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+  }
+
+
 app.all('/', function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -22,6 +31,7 @@ app.all('/', function (req, res, next) {
 
     next();
 });
+app.use(forceSSL);
 app.use('/static', express.static(path.join(__dirname, '/assets')));
 
 

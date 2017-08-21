@@ -35,7 +35,7 @@ document.getElementById("start").addEventListener("click", function () {
 });
 
 var base_image = new Image();
-base_image.src = 'http://gifylapse.com/static/img/gifylapse.png';  //'assets/img/gifylapse.png';
+base_image.src = 'https://gifylapse.com/static/img/gifylapse.png';  //'assets/img/gifylapse.png';
 base_image.height = 32;
 base_image.width = 32;
 base_image.crossOrigin = "Anonymous";
