@@ -29,6 +29,7 @@ app.all('/', function (req, res, next) {
 //     }
 //     next();
 //   });
+app.use(express.static(path.join(__dirname, '/.well-known')));
 app.use('/static', express.static(path.join(__dirname, '/assets')));
 
 
