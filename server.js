@@ -29,10 +29,10 @@ app.all('/', function (req, res, next) {
 //     }
 //     next();
 //   });
-app.use(express.static(path.join(__dirname, '/.well-known')));
+app.use('/.well-known',express.static(path.join(__dirname, '/.well-known')));
 app.use('/static', express.static(path.join(__dirname, '/assets')));
 
 
-app.all('*', (req, res) => res.sendFile(__dirname+'/index.html'));
+app.all('/', (req, res) => res.sendFile(__dirname+'/index.html'));
 
 app.listen(port, () => console.log('Server live ', port));
