@@ -35,13 +35,16 @@ document.getElementById("start").addEventListener("click", function () {
 });
 
 var base_image = new Image();
-base_image.src = 'assets/img/gifylapse.png';//'http://gifylapse.com/static/img/gifylapse.png';  //'assets/img/gifylapse.png';
+base_image.src = 'http://gifylapse.com/static/img/gifylapse.png';  //'assets/img/gifylapse.png';
 base_image.height = 32;
 base_image.width = 32;
 base_image.crossOrigin = "Anonymous";
+console.log('1');
 base_image.onload = function () { console.log('loaded'); };
+console.log('2');
+
 function make_base(context) {
-    console.log(base_image);
+
     context.drawImage(base_image, 0, 410);
 }
 
