@@ -21,10 +21,10 @@ app.all('/', function (req, res, next) {
     next();
 });
 // static assets
-app.use('/static', express.static(path.join(__dirname, '../temp/app/assets')));
+app.use('/static', express.static(path.join(__dirname, '../gifylapse/app/assets')));
 
 // routes ==============================================================================================
-app.all('/', (req, res) => res.sendFile(path.join(__dirname, '../temp/app/index.html')));
+app.all('/', (req, res) => res.sendFile(path.join(__dirname, '../gifylapse/app/index.html')));
 
 // start server ==============================================================================================
 app.listen(port, () => console.log('Server live ', port));
