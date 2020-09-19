@@ -1,10 +1,10 @@
 {
-  "name": "GifyLapse",
+  "name": "gifylapse",
   "version": "1.0.0",
   "description": "Make your own gifs",
   "main": "index.js",
   "scripts": {
-
+    "start": "node index.js"
   },
   "author": "Ahmad Abdullah Tariq",
   "license": "ISC",
