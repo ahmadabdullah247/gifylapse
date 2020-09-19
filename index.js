@@ -21,11 +21,10 @@ app.all('/', function (req, res, next) {
     next();
 });
 // static assets
-app.use('/.well-known',express.static(path.join(__dirname, '../client/.well-known')));
-app.use('/static', express.static(path.join(__dirname, '../client/assets')));
+app.use('/static', express.static(path.join(__dirname, '../temp/app/assets')));
 
 // routes ==============================================================================================
-app.all('/', (req, res) => res.sendFile(path.join(__dirname, '../client/index.html')));
+app.all('/', (req, res) => res.sendFile(path.join(__dirname, '../temp/app/index.html')));
 
 // start server ==============================================================================================
 app.listen(port, () => console.log('Server live ', port));

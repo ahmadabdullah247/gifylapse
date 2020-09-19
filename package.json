@@ -1,26 +1,14 @@
 {
-  "name": "timelapse",
+  "name": "temp",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server/server.js",
-  "dependencies": {
-    "express": "^4.15.4"
-  },
-  "devDependencies": {
-
-  },
+  "main": "index.js",
   "scripts": {
-    "init": "npm install",
-    "start": "node src/server/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/ahmadabdullah247/timelapse.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/ahmadabdullah247/timelapse/issues"
-  },
-  "homepage": "https://gitlab.com/ahmadabdullah247/timelapse#README"
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
