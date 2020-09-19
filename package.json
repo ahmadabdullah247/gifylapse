@@ -1,14 +1,14 @@
 {
-  "name": "temp",
+  "name": "GifyLapse",
   "version": "1.0.0",
-  "description": "",
+  "description": "Make your own gifs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ahmad Abdullah Tariq",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "4.17.1"
   }
 }
