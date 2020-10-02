@@ -14,6 +14,19 @@ body{
     background-image: linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
 }
 
+.modal{
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* Opera */ 
+    background-image: -o-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(left, #2c343f 0%, #3a424d 50%,#2c343f 100%); 
+}
+
 .header{
     text-align: center;
 }
