@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@master
@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js version
       uses: actions/setup-node@v1
       with:
-        node-version: '12.13.0'
+        node-version: '12.x'
 
     - name: npm install, build, and test
       run: |
@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'gifylapse'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e99b361821424c50bd4023608ad1fdac }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_40168a9cd10945d6887fab426853d92a }}
         package: .
