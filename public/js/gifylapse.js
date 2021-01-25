@@ -21,6 +21,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
 var timeId;
 document.getElementById('start').addEventListener('click', function () {
+    console.log('startedddddd')
     var count = 0;
     timeId = setInterval(function () {
         var div = document.getElementById('lapse');
@@ -42,7 +43,7 @@ document.getElementById('start').addEventListener('click', function () {
 
 document.getElementById('stop').addEventListener('click', function () {
     clearInterval(timeId);
-
+    console.log('ruk')
     var imgs = document.getElementById('lapse').children;
     var gif = new GIF({ workers: 2, quality: 10 });
 

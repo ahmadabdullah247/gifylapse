@@ -21,10 +21,10 @@ app.all('/', function (req, res, next) {
     next();
 });
 // static assets
-app.use('/static', express.static(path.join(__dirname, 'app/assets')));
+app.use('/static', express.static(path.join(__dirname, 'public/')));
 
 // routes ==============================================================================================
-app.all('/', (req, res) => res.sendFile(path.join(__dirname, 'app/index.html')));
+app.all('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
 // start server ==============================================================================================
 app.listen(port, () => console.log('Server live ', port));
