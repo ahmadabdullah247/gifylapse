@@ -232,6 +232,9 @@ img{
 
 /* ===== FOOTER =====*/
 .footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: var(--second-color);
   color: #fff;
   text-align: center;
