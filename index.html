@@ -36,42 +36,60 @@
             <!-- ========= About ========= -->
             <section class="about section " id="about">
                 <div class="about__container bd-grid">
-                    <div class="about__img">
+
+                    <!-- LEFT COLUMN -->
+                    <div class="about__col-left">
                         <video autoplay="true" id="videoElement">Your browser does not support the video element.</video>
                     </div>
-                    <div class="about__img">
-                        <h1 class="about__subtitle">Cant Find the perfect Gif?</h1>
-                        <p class="about__text">
-                            GifyLapse allows you to create personalized Gifs. For people who actually matter. 
-                        </p>       
-                        <button id="start" class="button"><i class='bx bx-play-circle'></i> GET STARTED</button>   
-                        <button id="stop"  class="button"><i class='bx bx-pause-circle'></i> STOP</button>
-                    <div id="settings-panel">
-                      <div class="settings-row">
-                        <label for="interval-input">Interval: <span id="interval-label">2000</span>ms</label>
-                        <input type="range" id="interval-input" min="500" max="5000" value="2000" step="500"
-                          oninput="document.getElementById('interval-label').textContent = this.value">
-                      </div>
-                      <div class="settings-row">
-                        <label for="resolution-select">Resolution:</label>
-                        <select id="resolution-select">
-                          <option value="320x240">320×240</option>
-                          <option value="640x480" selected>640×480</option>
-                          <option value="1280x720">1280×720</option>
-                        </select>
-                      </div>
-                      <div class="settings-row">
-                        <span id="frame-count-label" style="display:none;">Frames captured: <span id="frame-count">0</span></span>
-                      </div>
-                    </div>
-                    </div>
 
-                    <div id="lapse" class="about__img"></div>
-                    <div id="result" class="about__img"></div>
-                    <div id="error-message"></div>
-                    <div id="render-status">
-                      <progress id="gif-progress" value="0" max="100"></progress>
-                      <span id="render-label">Encoding GIF…</span>
+                    <!-- RIGHT COLUMN -->
+                    <div class="about__col-right">
+
+                        <!-- Section 1: Intro -->
+                        <div class="about__section">
+                            <h1 class="about__subtitle">Cant Find the perfect Gif?</h1>
+                            <p class="about__text">
+                                GifyLapse allows you to create personalized Gifs. For people who actually matter.
+                            </p>
+                            <button id="start" class="button"><i class='bx bx-play-circle'></i> GET STARTED</button>
+                            <button id="stop"  class="button"><i class='bx bx-pause-circle'></i> STOP</button>
+                        </div>
+
+                        <!-- Section 2: Settings -->
+                        <div class="about__section">
+                            <h2 class="about__section-title">Settings</h2>
+                            <div id="settings-panel">
+                              <div class="settings-row">
+                                <label for="interval-input">Interval: <span id="interval-label">2000</span>ms</label>
+                                <input type="range" id="interval-input" min="500" max="5000" value="2000" step="500"
+                                  oninput="document.getElementById('interval-label').textContent = this.value">
+                              </div>
+                              <div class="settings-row">
+                                <label for="resolution-select">Resolution:</label>
+                                <select id="resolution-select">
+                                  <option value="320x240">320×240</option>
+                                  <option value="640x480" selected>640×480</option>
+                                  <option value="1280x720">1280×720</option>
+                                </select>
+                              </div>
+                              <div class="settings-row">
+                                <span id="frame-count-label" style="display:none;">Frames captured: <span id="frame-count">0</span></span>
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Recent GIFs -->
+                        <div class="about__section">
+                            <h2 class="about__section-title">Recent GIFs</h2>
+                            <div id="result" class="about__img"></div>
+                            <div id="lapse" class="about__img"></div>
+                            <div id="error-message"></div>
+                            <div id="render-status">
+                              <progress id="gif-progress" value="0" max="100"></progress>
+                              <span id="render-label">Encoding GIF…</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
