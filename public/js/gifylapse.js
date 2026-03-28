@@ -87,7 +87,7 @@ document.getElementById('stop').addEventListener('click', function () {
     var renderStatus = document.getElementById('render-status');
     var gifProgress = document.getElementById('gif-progress');
     var renderLabel = document.getElementById('render-label');
-    renderStatus.style.display = 'block';
+    renderStatus.style.display = 'flex';
     renderLabel.textContent = 'Encoding GIF…';
     gifProgress.value = 0;
     document.getElementById('start').disabled = true;
