@@ -33,22 +33,30 @@ document.getElementById('start').addEventListener('click', function () {
     var errorEl = document.getElementById('error-message');
     errorEl.style.display = 'none';
     errorEl.textContent = '';
-    var count = 0;
+    var interval = parseInt(document.getElementById('interval-input').value, 10);
+    var resParts = document.getElementById('resolution-select').value.split('x');
+    var resWidth = parseInt(resParts[0], 10);
+    var resHeight = parseInt(resParts[1], 10);
+    document.getElementById('frame-count').textContent = '0';
+    document.getElementById('frame-count-label').style.display = 'inline';
     timeId = setInterval(function () {
         var div = document.getElementById('lapse');
         var canvas = document.createElement('canvas');
-        canvas.height = 480;
-        canvas.width = 640;
+        canvas.height = resHeight;
+        canvas.width = resWidth;
         var context = canvas.getContext('2d');
-        context.drawImage(video, 0, 0, 640, 480);
-        context.drawImage(logo_image, 0, 410);
-        context.translate(640, 0);
+        context.drawImage(video, 0, 0, resWidth, resHeight);
+        context.drawImage(logo_image, 0, resHeight - 70);
+        context.translate(resWidth, 0);
         context.scale(-1, 1);
         context.drawImage(canvas, 0, 0);
         div.appendChild(canvas);
-    }, 2000);
+        document.getElementById('frame-count').textContent = String(parseInt(document.getElementById('frame-count').textContent, 10) + 1);
+    }, interval);
     document.getElementById('start').disabled = true;
     document.getElementById('stop').disabled = false;
+    document.getElementById('interval-input').disabled = true;
+    document.getElementById('resolution-select').disabled = true;
 });
 
 
@@ -62,6 +70,8 @@ document.getElementById('stop').addEventListener('click', function () {
         errorEl.style.display = 'block';
         document.getElementById('start').disabled = false;
         document.getElementById('stop').disabled = true;
+        document.getElementById('interval-input').disabled = false;
+        document.getElementById('resolution-select').disabled = false;
         return;
     }
 
@@ -84,6 +94,8 @@ document.getElementById('stop').addEventListener('click', function () {
     gif.render();
     document.getElementById('start').disabled = false;
     document.getElementById('stop').disabled = true;
+    document.getElementById('interval-input').disabled = false;
+    document.getElementById('resolution-select').disabled = false;
 });
 
 

@@ -45,8 +45,21 @@
                             GifyLapse allows you to create personalized Gifs. For people who actually matter. 
                         </p>       
                         <button id="start" class="button"><i class='bx bx-play-circle'></i> GET STARTED</button>   
-                        <button id="stop"  class="button"><i class='bx bx-pause-circle'></i> STOP</button>  
-                    </div>      
+                        <button id="stop"  class="button"><i class='bx bx-pause-circle'></i> STOP</button>
+                    <div id="settings-panel" style="margin-top:12px;">
+                      <label for="interval-input">Capture interval: <span id="interval-label">2000</span>ms</label><br>
+                      <input type="range" id="interval-input" min="500" max="5000" value="2000" step="500" style="width:200px;" oninput="document.getElementById('interval-label').textContent = this.value">
+                      <br><br>
+                      <label for="resolution-select">Resolution:</label>
+                      <select id="resolution-select">
+                        <option value="320x240">320×240</option>
+                        <option value="640x480" selected>640×480</option>
+                        <option value="1280x720">1280×720</option>
+                      </select>
+                      <br><br>
+                      <span id="frame-count-label" style="display:none;">Frames captured: <span id="frame-count">0</span></span>
+                    </div>
+                    </div>
 
                     <div id="lapse" class="about__img"></div>
                     <div id="result" class="about__img"></div>
