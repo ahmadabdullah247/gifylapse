@@ -33,6 +33,7 @@ document.getElementById('start').addEventListener('click', function () {
     var errorEl = document.getElementById('error-message');
     errorEl.style.display = 'none';
     errorEl.textContent = '';
+    document.getElementById('render-status').style.display = 'none';
     var interval = parseInt(document.getElementById('interval-input').value, 10);
     var resParts = document.getElementById('resolution-select').value.split('x');
     var resWidth = parseInt(resParts[0], 10);
@@ -83,6 +84,21 @@ document.getElementById('stop').addEventListener('click', function () {
     // clear all elements
     $('#lapse').empty();
 
+    var renderStatus = document.getElementById('render-status');
+    var gifProgress = document.getElementById('gif-progress');
+    var renderLabel = document.getElementById('render-label');
+    renderStatus.style.display = 'block';
+    renderLabel.textContent = 'Encoding GIF…';
+    gifProgress.value = 0;
+    document.getElementById('start').disabled = true;
+    document.getElementById('stop').disabled = true;
+    document.getElementById('interval-input').disabled = true;
+    document.getElementById('resolution-select').disabled = true;
+
+    gif.on('progress', function(val) {
+        gifProgress.value = Math.round(val * 100);
+    });
+
     gif.on('finished', function(blob) {
         var url = URL.createObjectURL(blob)
         var img = $('<img id="dynamic">');
@@ -90,12 +106,14 @@ document.getElementById('stop').addEventListener('click', function () {
         img.attr('src', url);
         img.appendTo('#result');
         img.wrap('<a href="' + url+ '" download="gifylapse" />')
+        renderLabel.textContent = 'Done!';
+        document.getElementById('start').disabled = false;
+        document.getElementById('stop').disabled = true;
+        document.getElementById('interval-input').disabled = false;
+        document.getElementById('resolution-select').disabled = false;
+        setTimeout(function() { renderStatus.style.display = 'none'; }, 1500);
     });
     gif.render();
-    document.getElementById('start').disabled = false;
-    document.getElementById('stop').disabled = true;
-    document.getElementById('interval-input').disabled = false;
-    document.getElementById('resolution-select').disabled = false;
 });
 
 
