@@ -301,6 +301,10 @@ img{
   color: #fff;
   margin: 0 var(--mb-2)
 }
+.footer__link {
+  color: #fff;
+  text-decoration: underline;
+}
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (min-width: 768px){
