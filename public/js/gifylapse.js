@@ -35,6 +35,8 @@ document.getElementById('start').addEventListener('click', function () {
     errorEl.textContent = '';
     document.getElementById('render-status').style.display = 'none';
     var interval = parseInt(document.getElementById('interval-input').value, 10);
+    var maxDuration = parseInt(document.getElementById('max-duration-input').value, 10) * 1000;
+    var maxFrames = Math.floor(maxDuration / interval);
     var resParts = document.getElementById('resolution-select').value.split('x');
     var resWidth = parseInt(resParts[0], 10);
     var resHeight = parseInt(resParts[1], 10);
@@ -53,11 +55,15 @@ document.getElementById('start').addEventListener('click', function () {
         context.drawImage(canvas, 0, 0);
         div.appendChild(canvas);
         document.getElementById('frame-count').textContent = String(parseInt(document.getElementById('frame-count').textContent, 10) + 1);
+        if (parseInt(document.getElementById('frame-count').textContent, 10) >= maxFrames) {
+            document.getElementById('stop').click();
+        }
     }, interval);
     document.getElementById('start').disabled = true;
     document.getElementById('stop').disabled = false;
     document.getElementById('interval-input').disabled = true;
     document.getElementById('resolution-select').disabled = true;
+    document.getElementById('max-duration-input').disabled = true;
 });
 
 
@@ -73,6 +79,7 @@ document.getElementById('stop').addEventListener('click', function () {
         document.getElementById('stop').disabled = true;
         document.getElementById('interval-input').disabled = false;
         document.getElementById('resolution-select').disabled = false;
+        document.getElementById('max-duration-input').disabled = false;
         return;
     }
 
@@ -94,6 +101,7 @@ document.getElementById('stop').addEventListener('click', function () {
     document.getElementById('stop').disabled = true;
     document.getElementById('interval-input').disabled = true;
     document.getElementById('resolution-select').disabled = true;
+    document.getElementById('max-duration-input').disabled = true;
 
     gif.on('progress', function(val) {
         gifProgress.value = Math.round(val * 100);
@@ -111,6 +119,7 @@ document.getElementById('stop').addEventListener('click', function () {
         document.getElementById('stop').disabled = true;
         document.getElementById('interval-input').disabled = false;
         document.getElementById('resolution-select').disabled = false;
+        document.getElementById('max-duration-input').disabled = false;
         setTimeout(function() { renderStatus.style.display = 'none'; }, 1500);
     });
     gif.render();
