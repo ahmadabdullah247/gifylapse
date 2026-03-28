@@ -273,8 +273,11 @@ img{
   gap: var(--mb-4);
 }
 .about__section-title{
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
+  font-size: 0.75rem;
+  font-weight: var(--font-semi);
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin-bottom: var(--mb-2);
 }
 
@@ -427,7 +430,7 @@ img{
   flex-wrap: wrap;
 }
 .settings-row label {
-  font-size: 0.875rem;
+  font-size: var(--normal-font-size);
   color: var(--second-color);
   min-width: 9rem;
 }
@@ -468,7 +471,7 @@ select {
   border: 1px solid var(--first-color);
   border-radius: 0.4rem;
   font-family: var(--body-font);
-  font-size: 0.875rem;
+  font-size: var(--normal-font-size);
   color: var(--second-color);
   background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23745efe'/%3E%3C/svg%3E") no-repeat right 0.6rem center;
   cursor: pointer;
