@@ -53,6 +53,11 @@
                           oninput="document.getElementById('interval-label').textContent = this.value">
                       </div>
                       <div class="settings-row">
+                        <label for="max-duration-input">Max Duration: <span id="max-duration-label">5</span>s</label>
+                        <input type="range" id="max-duration-input" min="1" max="15" value="5" step="1"
+                          oninput="document.getElementById('max-duration-label').textContent = this.value">
+                      </div>
+                      <div class="settings-row">
                         <label for="resolution-select">Resolution:</label>
                         <select id="resolution-select">
                           <option value="320x240">320×240</option>
