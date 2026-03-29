@@ -326,14 +326,16 @@ img{
 #lapse{
   overflow-y:auto;
   height: 300px;
+  padding-top: 1rem;
 }
 #lapse>canvas{
   height: 70px;
 }
 #result>a>img{
   display:block;
-  padding:0px 5px;
+  margin:0 10px 10px 0;
   float:left;
+  border-radius: .5rem;
 }
 #result{
   overflow-y:hidden;
