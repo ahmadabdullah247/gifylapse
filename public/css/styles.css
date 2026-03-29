@@ -57,6 +57,7 @@ body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  padding-bottom: 5.5rem;
 }
 h1,h2,p{
   margin: 0;
@@ -325,14 +326,16 @@ img{
 #lapse{
   overflow-y:auto;
   height: 300px;
+  padding-top: 1rem;
 }
 #lapse>canvas{
   height: 70px;
 }
 #result>a>img{
   display:block;
-  padding:0px 5px;
+  margin:0 10px 10px 0;
   float:left;
+  border-radius: .5rem;
 }
 #result{
   overflow-y:hidden;
@@ -440,5 +443,29 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background: var(--first-color);
   border-radius: 4px;
+}
+
+/* ===== MOBILE LAYOUT ===== */
+@media screen and (max-width: 767px){
+  .about__container{
+    grid-template-columns: 100%;
+  }
+  .about__col-left video{
+    width: 100%;
+    max-width: 380px;
+  }
+  .about{
+    margin-top: 1rem;
+  }
+  .about__subtitle{
+    font-size: 1.5rem;
+  }
+  .settings-row label{
+    min-width: auto;
+  }
+  #lapse{
+    height: auto;
+    max-height: 200px;
+  }
 }
 
